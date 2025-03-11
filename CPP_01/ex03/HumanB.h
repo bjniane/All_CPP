@@ -1,19 +1,18 @@
 #ifndef HUMANB_H
 #define HUMANB_H
 
-#include <string>
 #include "Weapon.h"
 
-class HumanB 
+class HumanB
 {
     private:
         std::string name;
-        Weapon  *weaponb;
+        Weapon* weaponB;
     public:
         HumanB(std::string name_val);
         ~HumanB();
-        void    attack();
-        void    setWeapon(Weapon &weapon_name);
+        void    attack(void);
+        void    setWeapon(Weapon& weapon);
 };
 
 #endif

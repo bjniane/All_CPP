@@ -4,18 +4,17 @@ Zombie::Zombie()
 {
 }
 
-Zombie::Zombie(std::string zombie_name)
-    : name(zombie_name)
+Zombie::Zombie(std::string name_val)
+    : name(name_val)
 {
-    std::cout << "Constructor called for: " << name << std::endl;
 }
 
 Zombie::~Zombie()
 {
-    std::cout << "Destructor called for: " << name << std::endl;
+    std::cout << "Destructor called for " << name << std::endl;
 }
 
-void    Zombie::announce()
+void    Zombie::announce(void)
 {
-    std::cout << name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

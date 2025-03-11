@@ -1,4 +1,4 @@
-NAME = ZombieHodre
+NAME = Moar_Brainz
 
 SRC = main.cpp Zombie.cpp zombieHorde.cpp
 OBJ = $(SRC:.cpp=.o)
@@ -12,11 +12,8 @@ $(NAME) : $(OBJ)
 	${CXX} ${CXXFLAGS} ${OBJ} -o ${NAME}
 
 clean:
-	rm -f $(OBJ)
-
+	rm -rf ${OBJ}
 fclean: clean
 	rm -rf $(NAME)
-
 re: fclean all
-
 .PHONY: all clean fclean re

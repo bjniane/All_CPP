@@ -2,9 +2,9 @@
 
 int main()
 {
-    Zombie* heap_zombie = newZombie("HeapZombie");
-    heap_zombie->announce();
-    delete heap_zombie;
-
-    randomChump("StackZombie");
+    randomChump("Stack");
+    Zombie  *Heap = newZombie("Heap");
+    Heap->announce();
+    delete Heap;
+    return 0;
 }

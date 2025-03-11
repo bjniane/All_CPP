@@ -1,22 +1,19 @@
-NAME = Weapon
+NAME = Unnecessary_Violence
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC = main.cpp HumanA.cpp Weapon.cpp HumanB.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+all : $(NAME)
 
 $(NAME) : $(OBJ)
 	${CXX} ${CXXFLAGS} ${OBJ} -o ${NAME}
 
-clean:
-	rm -f $(OBJ)
-
-fclean: clean
+clean :
+	rm -rf $(OBJ)
+fclean : clean
 	rm -rf $(NAME)
-
-re: fclean all
-
-.PHONY: all clean fclean re
+re : fclean all
+.PHONY : all clean fclean re

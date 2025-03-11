@@ -1,12 +1,13 @@
-#include "Harl.h"
+#include "harl.h"
 
 int main(int ac, char **av)
 {
-    if (ac != 2)
+    if (ac == 2)
     {
-        std::cout << "Enter one of these options (debug, info, warning and error). " << std::endl;
-        return (1);
+        Harl harl;
+        harl.complain(av[1]);
     }
-    Harl    h;
-    h.complain(av[1]);
+    else
+        std::cout << "Usage: ./harlFilter level" << std::endl;
+    return 0;
 }

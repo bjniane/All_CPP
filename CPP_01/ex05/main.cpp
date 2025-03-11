@@ -1,12 +1,12 @@
-#include "Harl.h"
+#include "harl.h"
 
 int main()
 {
-    Harl    h;
-
-    h.complain("DEBUG");
-    h.complain("WARNING");
-    h.complain("INFO");
-    h.complain("ERROR");
-    h.complain("bilal");
+    Harl    harl;
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
+    harl.complain("INVALID");
+    return 0;
 }
