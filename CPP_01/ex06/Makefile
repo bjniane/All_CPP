@@ -1,22 +1,19 @@
 NAME = harlFilter
 
-SRC = main.cpp Harl.cpp
-OBJ = $(SRC:.cpp=.o)
-
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+SRC = main.cpp harl.cpp
+OBJ = $(SRC:.cpp=.o)
+
+all : $(NAME)
 
 $(NAME) : $(OBJ)
 	${CXX} ${CXXFLAGS} ${OBJ} -o ${NAME}
 
-clean:
-	rm -f $(OBJ)
-
-fclean: clean
+clean :
+	rm -rf $(OBJ)
+fclean : clean
 	rm -rf $(NAME)
-
-re: fclean all
-
-.PHONY: all clean fclean re
+re : fclean all
+.PHONY : all clean fclean re

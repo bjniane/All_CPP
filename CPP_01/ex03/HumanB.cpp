@@ -1,7 +1,7 @@
 #include "HumanB.h"
 
 HumanB::HumanB(std::string name_val)
-    : name(name_val), weaponb(NULL)
+    :name(name_val), weaponB(NULL)
 {
 }
 
@@ -9,15 +9,15 @@ HumanB::~HumanB()
 {
 }
 
-void    HumanB::attack()
+void    HumanB::setWeapon(Weapon& weapon)
 {
-    if (weaponb)
-        std::cout << name << " attacks with their " << weaponb->getType() << std::endl;
-    else
-        std::cout << name << " has no woapon!" << std::endl;
+    weaponB = &weapon;
 }
 
-void    HumanB::setWeapon(Weapon &weapon_name)
+void    HumanB::attack(void)
 {
-    weaponb = &weapon_name;
+    if (weaponB)
+        std::cout << name << " attacks with their " << weaponB->getType() << std::endl;
+    else
+        std::cout << name << " has no weapon." << std::endl;
 }

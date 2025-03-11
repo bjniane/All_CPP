@@ -1,22 +1,19 @@
-NAME = filename
-
-SRC = main.cpp file.cpp
-OBJ = $(SRC:.cpp=.o)
+NAME = SED_IS_FOR_LOSERS
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+SRC = main.cpp file.cpp
+OBJ = $(SRC:.cpp=.o)
+
+all : $(NAME)
 
 $(NAME) : $(OBJ)
 	${CXX} ${CXXFLAGS} ${OBJ} -o ${NAME}
 
-clean:
-	rm -f $(OBJ)
-
-fclean: clean
+clean :
+	rm -rf $(OBJ)
+fclean : clean
 	rm -rf $(NAME)
-
-re: fclean all
-
-.PHONY: all clean fclean re
+re : fclean all
+.PHONY : all clean fclean re

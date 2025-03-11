@@ -1,22 +1,19 @@
-NAME = Zombie
+NAME = BraiiiiiiinnnzzzZ
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp randomChump.cpp Zombie.cpp newZombie.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+all : $(NAME)
 
 $(NAME) : $(OBJ)
 	${CXX} ${CXXFLAGS} ${OBJ} -o ${NAME}
 
 clean:
-	rm -f $(OBJ)
-
+	rm -rf $(OBJ)
 fclean: clean
 	rm -rf $(NAME)
-
 re: fclean all
-
 .PHONY: all clean fclean re
