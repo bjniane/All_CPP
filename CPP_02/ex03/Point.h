@@ -5,18 +5,21 @@
 
 class Point 
 {
+    private:
+        const Fixed   x;
+        const Fixed   y;
     public:
-        Fixed   x;
-        Fixed   y;
         Point();
-        Point(Fixed a, Fixed b);
+        Point(const Fixed a, const Fixed b);
         Point(const Point& src);
         Point&  operator=(const Point& rhs);
         ~Point();
 
-        bool    operator==(const Point& rhs);
+        Fixed   getX() const {return x;}
+        Fixed   getY() const {return y;}
+
 };
 
-void    isInside(const Point& A, const Point& B, const Point& C, const Point& P);
+bool    bsp(Point const A, Point const B, Point const C, Point const P);
 
 #endif
