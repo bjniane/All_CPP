@@ -1,6 +1,9 @@
 #ifndef IDENTIFY_HPP
 #define IDENTIFY_HPP
+
 #include <iostream>
+#include <string>
+#include <cstdlib>
 
 class Base
 {
