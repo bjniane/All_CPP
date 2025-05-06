@@ -11,7 +11,7 @@ class Array
         int n;
         T* arr;
     public:
-        Array() {arr = new T;}
+        Array() : n(0), arr(NULL){}
         Array(int length)
         {
             n = length;
