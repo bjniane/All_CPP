@@ -4,7 +4,7 @@
 
 int main()
 {
-    Span sp = Span(5);
+    Span sp = Span(10);
 
     try 
     {

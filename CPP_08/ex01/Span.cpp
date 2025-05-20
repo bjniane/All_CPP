@@ -1,5 +1,6 @@
 #include "Span.hpp"
 #include <cstddef>
+#include <stdexcept>
 
 Span::Span()
     : N(0)
@@ -39,11 +40,15 @@ void    Span::addNumber(int n)
 
 int Span::shortestSpan()
 {
-    std::sort(arr.begin(), arr.end());
-    int shortest = arr[1] - arr[0];
-    for (size_t i = 1; i < arr.size() - 1; i++)
+    if (arr.size() < 2)
+        throw std::runtime_error("Need at least two elements!");
+    std::vector<int> copy;
+    std::copy(arr.begin(), arr.end(), std::back_inserter(copy));
+    std::sort(copy.begin(), copy.end());
+    int shortest = copy[1] - copy[0];
+    for (size_t i = 1; i < copy.size() - 1; i++)
     {
-        int current = arr[i + 1] - arr[i];
+        int current = copy[i + 1] - copy[i];
         if (current < shortest)
             shortest = current;
     }
@@ -52,5 +57,10 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-    return arr[arr.size() - 1] - arr[0];
+    if (arr.size() < 2)
+        throw std::runtime_error("Need at least two elements!");
+    std::vector<int> copy;
+    std::copy(arr.begin(), arr.end(), std::back_inserter(copy));
+    std::sort(copy.begin(), copy.end());
+    return copy.back() - copy.front();
 }
