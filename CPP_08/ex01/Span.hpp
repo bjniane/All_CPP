@@ -20,7 +20,12 @@ class Span
         template<typename T>
         void    addRange(T first, T last)
         {
-            arr.insert(arr.end(), first, last);
+            while (first != last)
+            {
+                addNumber(*first);
+                first++;
+            }
+            // arr.insert(arr.end(), first, last);
         }
 
         void    addNumber(int n);
